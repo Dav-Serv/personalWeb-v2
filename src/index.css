@@ -1,0 +1,248 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------
+   Palette — light = weathered parchment / wanted poster
+             dark  = deep sea at night on the Grand Line
+   --------------------------------------------------------------- */
+:root {
+  --surface: #f5e7cd;
+  --surface-2: #ecd9b4;
+  --surface-3: #e0c793;
+  --ink: #2a1a0f;
+  --ink-soft: #6b5334;
+  --line: rgba(42, 26, 15, 0.16);
+  --red: #b3121f;
+  --gold: #b8830c;
+  --sea: #17627f;
+  --glow: rgba(184, 131, 12, 0.28);
+  --card: rgba(255, 250, 238, 0.72);
+  --scrim: rgba(245, 231, 205, 0.78);
+}
+
+.dark {
+  --surface: #050b18;
+  --surface-2: #0a172e;
+  --surface-3: #122544;
+  --ink: #eaf1fb;
+  --ink-soft: #94a9c6;
+  --line: rgba(234, 241, 251, 0.14);
+  --red: #ef4b57;
+  --gold: #f5b93c;
+  --sea: #4cc4f0;
+  --glow: rgba(76, 196, 240, 0.25);
+  --card: rgba(12, 26, 50, 0.66);
+  --scrim: rgba(5, 11, 24, 0.82);
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-red: var(--red);
+  --color-gold: var(--gold);
+  --color-sea: var(--sea);
+  --color-card: var(--card);
+
+  --font-display: 'Cinzel', ui-serif, Georgia, serif;
+  --font-pirate: 'Pirata One', 'Cinzel', ui-serif, Georgia, serif;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-sway: sway 9s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 22s linear infinite;
+  --animate-shine: shine 3.5s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-2.5deg);
+  }
+  50% {
+    transform: rotate(2.5deg);
+  }
+}
+
+@keyframes shine {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* The wave silhouette is a mask, so the drift has to move the mask itself. */
+@keyframes wave-drift {
+  from {
+    mask-position: 0 bottom;
+    -webkit-mask-position: 0 bottom;
+  }
+  to {
+    mask-position: 1200px bottom;
+    -webkit-mask-position: 1200px bottom;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Base
+   --------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Locks scroll while the preloader is on screen */
+  body.is-loading {
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Utilities
+   --------------------------------------------------------------- */
+/* Parallax: one shared scroll variable, transforms only (no layout work) */
+@utility parallax {
+  transform: translate3d(0, calc(var(--sy, 0) * var(--speed, 0.1) * 1px), 0);
+  will-change: transform;
+}
+
+@utility card-surface {
+  background: var(--card);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+/* Scroll reveal — starts hidden, IntersectionObserver adds .is-in */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Paper / water texture, painted with gradients so there is no image request */
+.texture-paper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(120, 80, 20, 0.09) 0 12%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 82% 68%,
+      rgba(120, 80, 20, 0.07) 0 14%,
+      transparent 46%
+    );
+}
+
+.dark .texture-paper::after {
+  background-image:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(76, 196, 240, 0.08) 0 12%,
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 82% 68%,
+      rgba(245, 185, 60, 0.06) 0 14%,
+      transparent 46%
+    );
+}
+
+/* Duration is set per band inline so each one drifts at its own rate. */
+.wave-band {
+  animation: wave-drift 28s linear infinite;
+}
+
+/* ---------------------------------------------------------------
+   Motion preferences — kill every non-essential animation
+   --------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .parallax {
+    transform: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

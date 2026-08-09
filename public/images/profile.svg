@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0c793" />
+      <stop offset="1" stop-color="#c9a862" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g)" />
+  <g fill="#2a1a0f" opacity=".22">
+    <circle cx="400" cy="390" r="130" />
+    <path d="M400 560c-140 0-250 88-250 197v243h500V757c0-109-110-197-250-197Z" />
+  </g>
+  <g fill="#2a1a0f" opacity=".5" font-family="system-ui, sans-serif" text-anchor="middle">
+    <text x="400" y="905" font-size="42" font-weight="700">FOTO KAMU</text>
+    <text x="400" y="952" font-size="26">ganti file ini · rasio 4:5</text>
+  </g>
+</svg>
