@@ -110,7 +110,7 @@ export const dict = {
       scroll: 'Scroll to set sail',
     },
     about: {
-      title: 'Log Pose',
+      title: 'About',
       subtitle: 'A little about my voyage',
       body: 'I am a web developer who believes every line of code is a step toward a dream. It started with plain curiosity about how a page works; today I build interfaces that are fast, accessible, and a joy to use. Like any good pirate crew, I believe the best work is made together.',
       quote:
@@ -122,11 +122,11 @@ export const dict = {
       },
     },
     crew: {
-      title: 'Devil Fruits',
+      title: 'Skills',
       subtitle: 'The arsenal I sail with',
     },
     voyage: {
-      title: 'Voyage Log',
+      title: 'Journey',
       subtitle: 'Islands I have docked at',
       present: 'Present',
     },
@@ -139,7 +139,7 @@ export const dict = {
       subtitle: 'Battles I have taken part in',
     },
     bounty: {
-      title: 'Wanted Posters',
+      title: 'Projects',
       subtitle: 'The work I am proudest of',
       view: 'View Work',
     },
@@ -182,28 +182,34 @@ export const content = {
   id: {
     timeline: [
       {
-        year: '2019',
-        island: 'Desa Fuschia',
-        role: 'Awal Perjalanan',
+        year: '2014 - 2019',
+        island: 'SD Negeri Krajan',
+        role: '-',
+        desc: 'Saya bersekolah di SD Negeri Krajan selama 6 tahun dari umur 6 - 11 tahun.',
+      },
+      {
+        year: '2019 - 2022',
+        island: 'SMP Negeri 2 Srandakan',
+        role: '-',
+        desc: 'Saya bersekolah di SMP Negeri 2 Srandakan selama 3 tahun dari umur 11 - 14 tahun.',
+      },
+      {
+        year: '2022 - 2025',
+        island: 'SMK Muhammadiyah 1 Bambanglipuro',
+        role: 'RPL(Rekayasa Perangkat Lunak)',
         desc: 'Menulis baris HTML pertama dan jatuh cinta pada web.',
       },
       {
-        year: '2021',
-        island: 'Water Seven',
-        role: 'Frontend Developer',
-        desc: 'Membangun antarmuka produk untuk startup lokal.',
-      },
-      {
-        year: '2023',
-        island: 'Sabaody',
-        role: 'Fullstack Developer',
-        desc: 'Memimpin migrasi ke React dan menaikkan skor performa 40%.',
+        year: '2024 (6 bulan)',
+        island: 'PT Global Intermedia Nusantara',
+        role: 'PKL(Praktik Kerja Lapangan)',
+        desc: 'Belajar database postgresql dan Framework Laravel.',
       },
       {
         year: 'now',
-        island: 'Grand Line',
-        role: 'Freelance & Open Source',
-        desc: 'Membantu tim membangun produk yang cepat dan mudah diakses.',
+        island: 'Universitas AMIKOM Yogyakarta',
+        role: 'S1 Informatika',
+        desc: 'Saya sekarang menjadi mahasiswa aktif di Universitas AMIKOM Yogyakarta serta aktif mengikuti organisasi, kompetisi, perkuliahan, dan codingcamp.',
       },
     ],
     certs: [
@@ -240,28 +246,34 @@ export const content = {
   en: {
     timeline: [
       {
-        year: '2019',
-        island: 'Fuschia Village',
-        role: 'The Journey Begins',
-        desc: 'Wrote my first line of HTML and fell for the web.',
+        year: '2014 - 2019',
+        island: 'SD Negeri Krajan',
+        role: '-',
+        desc: 'I attended Krajan Public Elementary School for six years, from the age of 6 - 11',
       },
       {
-        year: '2021',
-        island: 'Water Seven',
-        role: 'Frontend Developer',
-        desc: 'Built product interfaces for local startups.',
+        year: '2019 - 2022',
+        island: 'SMP Negeri 2 Srandakan',
+        role: '-',
+        desc: 'I attended SMP Negeri 2 Srandakan for three years, from the age of 11 - 14.',
       },
       {
-        year: '2023',
-        island: 'Sabaody',
-        role: 'Fullstack Developer',
-        desc: 'Led a migration to React and lifted performance scores by 40%.',
+        year: '2022 - 2025',
+        island: 'SMK Muhammadiyah 1 Bambanglipuro',
+        role: 'Software Engineering',
+        desc: 'Wrote the first line of HTML and fell in love with the web.',
+      },
+      {
+        year: '2024 (6 month)',
+        island: 'PT Global Intermedia Nusantara',
+        role: 'Internship',
+        desc: 'Learning the PostgreSQL database and the Laravel framework.',
       },
       {
         year: 'now',
-        island: 'Grand Line',
-        role: 'Freelance & Open Source',
-        desc: 'Helping teams ship products that are fast and accessible.',
+        island: 'AMIKOM Yogyakarta University',
+        role: 'Bachelor Informatics',
+        desc: 'I am currently an active student at Universitas AMIKOM Yogyakarta, actively participating in organizations, competitions, coursework, and coding camps.',
       },
     ],
     certs: [

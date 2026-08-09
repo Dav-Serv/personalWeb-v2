@@ -2,12 +2,7 @@
 
 export function JollyRoger({ className = '' }) {
   return (
-    <svg viewBox="0 0 120 120" className={className} aria-hidden="true">
-      <g fill="currentColor">
-        <path d="M60 18c-19 0-34 12-34 28 0 9 5 17 13 22v9a6 6 0 0 0 6 6h30a6 6 0 0 0 6-6v-9c8-5 13-13 13-22 0-16-15-28-34-28Zm-13 30a7 7 0 1 1 0 14 7 7 0 0 1 0-14Zm26 0a7 7 0 1 1 0 14 7 7 0 0 1 0-14ZM49 76h22v6H49v-6Z" />
-        <path d="M17 84c14 4 29 6 43 6s29-2 43-6l3 8c-15 5-31 7-46 7s-31-2-46-7l3-8Z" />
-      </g>
-    </svg>
+      <img viewBox="0 0 120 120" className={className} aria-hidden="true" src="/images/onepiece.svg"/>
   )
 }
 

@@ -90,7 +90,7 @@ export default function Navbar() {
           className="flex shrink-0 items-center gap-2 font-display text-base font-bold tracking-tight sm:text-lg"
         >
           <JollyRoger className="h-8 w-8 text-red transition-transform duration-300 hover:rotate-12" />
-          <span className="hidden sm:inline">Grand Line</span>
+          <span className="hidden sm:inline">DavServ</span>
         </a>
 
         {/* Desktop links */}
