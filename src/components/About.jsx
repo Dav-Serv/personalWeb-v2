@@ -47,9 +47,9 @@ export default function About() {
             </blockquote>
 
             <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl card-surface p-5 sm:p-6">
-              <Stat value={5} label={t.about.stats.years} />
+              <Stat value={4} label={t.about.stats.years} />
               <Stat value={42} label={t.about.stats.projects} />
-              <Stat value={18} label={t.about.stats.clients} />
+              <Stat value={2} label={t.about.stats.clients} />
             </div>
           </div>
         </div>

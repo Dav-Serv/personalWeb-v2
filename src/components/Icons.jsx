@@ -96,6 +96,37 @@ export function ArrowUp({ className = '' }) {
   )
 }
 
+export function Download({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <g stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3v12M7 11l5 5 5-5M4 20h16" />
+      </g>
+    </svg>
+  )
+}
+
+/** Cover glyph for the PDF cards — a dog-eared sheet with a red PDF ribbon. */
+export function FilePdf({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        d="M6 2h7.2L19 7.8V22H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
+        fill="currentColor"
+        opacity=".14"
+      />
+      <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none">
+        <path d="M13.2 2.2v5.6H19" />
+        <path d="M6 2h7.2L19 7.8V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" />
+      </g>
+      <g fill="currentColor">
+        <path d="M7.6 18.4v-5.2h2a1.7 1.7 0 0 1 0 3.4H8.8v1.8H7.6Zm1.2-2.9h.8a.55.55 0 0 0 0-1.1h-.8v1.1Z" />
+        <path d="M11.6 18.4v-5.2h1.9c1.4 0 2.3 1 2.3 2.6s-.9 2.6-2.3 2.6h-1.9Zm1.2-1.1h.6c.7 0 1.1-.5 1.1-1.5s-.4-1.5-1.1-1.5h-.6v3Z" />
+      </g>
+    </svg>
+  )
+}
+
 const socialPaths = {
   github:
     'M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5 3.9-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2Z',

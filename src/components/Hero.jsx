@@ -1,7 +1,7 @@
 import { usePointerTilt } from '../hooks'
-import { socials } from '../i18n'
+import { resumeFile, socials } from '../i18n'
 import { useApp } from '../store'
-import { Compass, SocialIcon } from './Icons'
+import { Compass, Download, SocialIcon } from './Icons'
 
 export default function Hero() {
   const { t } = useApp()
@@ -45,6 +45,19 @@ export default function Hero() {
               className="rounded-full border-2 border-ink/25 px-7 py-3.5 text-center text-sm font-bold tracking-wide transition-colors duration-200 hover:border-gold hover:text-gold"
             >
               {t.hero.ctaSecondary}
+            </a>
+          </div>
+
+          {/* Sits on its own row so it stays directly under the primary CTA at
+              every breakpoint, not beside it. */}
+          <div className="mt-3 flex justify-center lg:justify-start">
+            <a
+              href={resumeFile}
+              download
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-gold/50 bg-gold/10 px-7 py-3.5 text-sm font-bold tracking-wide text-gold transition-colors duration-200 hover:border-gold hover:bg-gold/20 sm:w-auto"
+            >
+              <Download className="h-4 w-4" />
+              {t.hero.resume}
             </a>
           </div>
 

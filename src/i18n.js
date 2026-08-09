@@ -7,7 +7,7 @@ export const dict = {
       crew: 'Keahlian',
       voyage: 'Perjalanan',
       cert: 'Sertifikat',
-      contest: 'Kompetisi',
+      contest: 'Kegiatan',
       bounty: 'Proyek',
       contact: 'Kontak',
     },
@@ -19,6 +19,7 @@ export const dict = {
         'Berlayar di Grand Line teknologi, memburu One Piece bernama kode yang sempurna.',
       ctaPrimary: 'Lihat Proyek',
       ctaSecondary: 'Rekrut Aku',
+      resume: 'Unduh Resume/CV',
       bounty: 'Bounty',
       scroll: 'Gulir untuk berlayar',
     },
@@ -29,9 +30,9 @@ export const dict = {
       quote:
         'Aku tidak akan mati sebelum mimpiku terwujud — dan mimpiku adalah membangun web yang membuat orang tersenyum.',
       stats: {
-        years: 'Tahun Berlayar',
-        projects: 'Pulau Ditaklukkan',
-        clients: 'Kru Bergabung',
+        years: 'Tahun Pengalaman',
+        projects: 'Proyek',
+        clients: 'Klien',
       },
     },
     crew: {
@@ -48,8 +49,8 @@ export const dict = {
       subtitle: 'Bukti pelayaran yang sudah kutempuh',
     },
     contest: {
-      title: 'Kompetisi',
-      subtitle: 'Pertarungan yang pernah kuikuti',
+      title: 'Kegiatan',
+      subtitle: 'Kegiatan yang pernah kuikuti',
     },
     bounty: {
       title: 'Proyek',
@@ -77,6 +78,10 @@ export const dict = {
       and: 'dan semangat bajak laut',
       rights: 'Seluruh hak cipta dilindungi.',
     },
+    pdf: {
+      open: 'Buka di tab baru',
+      download: 'Unduh PDF',
+    },
     a11y: {
       toggleTheme: 'Ganti mode terang/gelap',
       toggleLang: 'Ganti bahasa',
@@ -94,7 +99,7 @@ export const dict = {
       crew: 'Skills',
       voyage: 'Journey',
       cert: 'Certificates',
-      contest: 'Competitions',
+      contest: 'Activity',
       bounty: 'Projects',
       contact: 'Contact',
     },
@@ -106,6 +111,7 @@ export const dict = {
         'Sailing the Grand Line of technology, hunting the One Piece of perfect code.',
       ctaPrimary: 'View Projects',
       ctaSecondary: 'Hire Me',
+      resume: 'Download Resume/CV',
       bounty: 'Bounty',
       scroll: 'Scroll to set sail',
     },
@@ -116,9 +122,9 @@ export const dict = {
       quote:
         "I won't rest until my dream comes true — and my dream is to build a web that makes people smile.",
       stats: {
-        years: 'Years Sailing',
-        projects: 'Islands Conquered',
-        clients: 'Crew Joined',
+        years: 'Years Of Experience',
+        projects: 'Projects',
+        clients: 'Clients',
       },
     },
     crew: {
@@ -135,8 +141,8 @@ export const dict = {
       subtitle: 'Proof of the voyages I have completed',
     },
     contest: {
-      title: 'Competitions',
-      subtitle: 'Battles I have taken part in',
+      title: 'Activity',
+      subtitle: 'Avtivity I have taken part in',
     },
     bounty: {
       title: 'Projects',
@@ -163,6 +169,10 @@ export const dict = {
       made: 'Built with',
       and: 'and pirate spirit',
       rights: 'All rights reserved.',
+    },
+    pdf: {
+      open: 'Open in a new tab',
+      download: 'Download PDF',
     },
     a11y: {
       toggleTheme: 'Toggle light/dark mode',
@@ -212,10 +222,30 @@ export const content = {
         desc: 'Saya sekarang menjadi mahasiswa aktif di Universitas AMIKOM Yogyakarta serta aktif mengikuti organisasi, kompetisi, perkuliahan, dan codingcamp.',
       },
     ],
+    // `file` (not `image`) makes the card render the PDF cover and the popup
+    // open the document itself. Drop your own PDFs in public/files/.
     certs: [
-      { title: 'Sertifikat Backend Developer', image: '/images/cert-1.svg' },
-      { title: 'Sertifikat Cloud Practitioner', image: '/images/cert-2.svg' },
-      { title: 'Sertifikat Basis Data', image: '/images/cert-3.svg' },
+      { title: 'Sertifikat Kelulusan CodingCamp', file: '/files/codingcamp.pdf' },
+      { title: 'Sertifikat English For Business Communication', file: '/files/english-for-business.pdf' },
+      { title: 'Sertifikat Financial Literacy', file: '/files/financial-literacy.pdf' },
+      { title: 'Sertifikat Fundamental Backend', file: '/files/fundamental-backend.pdf' },
+      { title: 'Sertifikat Fundamental React', file: '/files/fundamental-react.pdf' },
+      { title: 'Sertifikat React Pemula', file: '/files/react-pemula.pdf' },
+      { title: 'Sertifikat Backend Pemula', file: '/files/backend-pemula.pdf' },
+      { title: 'Sertifikat Frontend Pemula', file: '/files/frontend-pemula.pdf' },
+      { title: 'Sertifikat Dasar Cloud & AWS', file: '/files/dasar-cloud-aws.pdf' },
+      { title: 'Sertifikat Logic Pemrograman', file: '/files/logic-pemrograman.pdf' },
+      { title: 'Sertifikat Dasar Pemrograman', file: '/files/dasar-pemrograman.pdf' },
+      { title: 'Sertifikat Dasar Pemrograman Web', file: '/files/dasar-pemrograman-web.pdf' },
+      { title: 'Sertifikat Dasar Pemrograman Javascript', file: '/files/dasar-javascript.pdf' },
+      { title: 'Sertifikat TOEIC', file: '/files/toeic.pdf' },
+      { title: 'Sertifikat Paskibra', file: '/files/paskib.pdf' },
+      { title: 'Sertifikat LKS', file: '/files/LKS.pdf' },
+      { title: 'Sertifikat Lomba POPKAB', file: '/files/popkab.pdf' },
+      { title: 'Sertifikat Lomba OlympicAD', file: '/files/OlympicAD-Prov.pdf' },
+      { title: 'Sertifikat Lomba Ignition', file: '/files/ignition.pdf' },
+      { title: 'Sertifikat Lomba FIT', file: '/files/fit.pdf' },
+      { title: 'Sertifikat Hackathon', file: '/files/hackathon.pdf' },
     ],
     competitions: [
       { title: 'Juara 1 Hackathon Nasional', image: '/images/contest-1.svg' },
@@ -277,9 +307,27 @@ export const content = {
       },
     ],
     certs: [
-      { title: 'Backend Developer Certificate', image: '/images/cert-1.svg' },
-      { title: 'Cloud Practitioner Certificate', image: '/images/cert-2.svg' },
-      { title: 'Database Fundamentals Certificate', image: '/images/cert-3.svg' },
+      { title: 'CodingCamp Completion Certificate', file: '/files/codingcamp.pdf' },
+      { title: 'English for Business Communication Certificate', file: '/files/english-for-business.pdf' },
+      { title: 'Financial Literacy Certificate', file: '/files/financial-literacy.pdf' },
+      { title: 'Backend Fundamentals Certificate', file: '/files/fundamental-backend.pdf' },
+      { title: 'React Fundamentals Certificate', file: '/files/fundamental-react.pdf' },
+      { title: 'React (Beginner) Certificate', file: '/files/react-pemula.pdf' },
+      { title: 'Backend (Beginner) Certificate', file: '/files/backend-pemula.pdf' },
+      { title: 'Frontend (Beginner) Certificate', file: '/files/frontend-pemula.pdf' },
+      { title: 'Cloud & AWS Basics Certificate', file: '/files/dasar-cloud-aws.pdf' },
+      { title: 'Programming Logic Certificate', file: '/files/logic-pemrograman.pdf' },
+      { title: 'Programming Basics Certificate', file: '/files/dasar-pemrograman.pdf' },
+      { title: 'Web Programming Basics Certificate', file: '/files/dasar-pemrograman-web.pdf' },
+      { title: 'JavaScript Programming Basics Certificate', file: '/files/dasar-javascript.pdf' },
+      { title: 'TOEIC Certificate', file: '/files/toeic.pdf' },
+      { title: 'Flag-Raising Squad (Paskibra) Certificate', file: '/files/paskib.pdf' },
+      { title: 'LKS Certificate', file: '/files/LKS.pdf' },
+      { title: 'POPKAB Competition Certificate', file: '/files/popkab.pdf' },
+      { title: 'OlympicAD Competition Certificate', file: '/files/OlympicAD-Prov.pdf' },
+      { title: 'Ignition Competition Certificate', file: '/files/ignition.pdf' },
+      { title: 'FIT Competition Certificate', file: '/files/fit.pdf' },
+      { title: 'Hackathon Certificate', file: '/files/hackathon.pdf' },
     ],
     competitions: [
       { title: '1st Place — National Hackathon', image: '/images/contest-1.svg' },
@@ -308,6 +356,9 @@ export const content = {
     ],
   },
 }
+
+// Swap this file in public/files/ and the hero download button follows.
+export const resumeFile = '/files/DavaRiasPutratama_Resume.pdf'
 
 export const socials = [
   { label: 'GitHub', href: 'https://github.com/Dav-Serv/', icon: 'github' },

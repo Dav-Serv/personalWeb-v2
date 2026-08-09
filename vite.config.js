@@ -12,7 +12,13 @@ export default defineConfig({
     reportCompressedSize: false,
     rollupOptions: {
       output: {
-        manualChunks: (id) => (id.includes('node_modules') ? 'vendor' : null),
+        // pdf.js is deliberately left out of `vendor`: it is only imported when
+        // a certificate cover is about to be drawn, and folding it into the
+        // eager chunk would put ~460 kB back on the critical path.
+        manualChunks: (id) =>
+          id.includes('node_modules') && !id.includes('pdfjs-dist')
+            ? 'vendor'
+            : null,
       },
     },
   },

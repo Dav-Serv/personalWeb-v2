@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Lightbox from './Lightbox'
+import PdfCover from './PdfCover'
 import SectionTitle from './SectionTitle'
 
 // Intrinsic ratio of the placeholder art — reserves space before decode.
@@ -7,9 +8,13 @@ const W = 1200
 const H = 900
 
 /**
- * Title-and-image cards that open the shared lightbox. Deliberately has no
+ * Title-and-cover cards that open the shared lightbox. Deliberately has no
  * description or tag slot: this is the layout used by both Sertifikat and
- * Kompetisi, where the image is the content.
+ * Kompetisi, where the document is the content.
+ *
+ * Each item carries either `image` (Kompetisi) or `file` (Sertifikat, a PDF).
+ * PDF items get a drawn cover instead of a thumbnail, so the page never pulls a
+ * whole document down just to fill a card.
  */
 export default function Gallery({ id, title, subtitle, items }) {
   const [open, setOpen] = useState(null)
@@ -33,15 +38,23 @@ export default function Gallery({ id, title, subtitle, items }) {
                 className="flex h-full w-full flex-col overflow-hidden rounded-2xl card-surface text-left transition-transform duration-300 hover:-translate-y-1.5"
               >
                 <span className="block aspect-[4/3] overflow-hidden border-b border-line bg-gradient-to-br from-surface-3 to-surface-2">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    width={W}
-                    height={H}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  {item.file ? (
+                    <PdfCover
+                      file={item.file}
+                      label={item.title}
+                      className="transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      width={W}
+                      height={H}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
                 </span>
                 <span className="block p-4 font-display text-base font-bold sm:p-5 sm:text-lg">
                   {item.title}
