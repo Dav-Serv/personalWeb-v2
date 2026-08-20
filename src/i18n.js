@@ -51,11 +51,13 @@ export const dict = {
     contest: {
       title: 'Kegiatan',
       subtitle: 'Kegiatan yang pernah kuikuti',
+      coming: 'COMMING SOON',
     },
     bounty: {
       title: 'Proyek',
       subtitle: 'Karya yang paling kubanggakan',
       view: 'Lihat Karya',
+      coming: 'COMMING SOON',
     },
     contact: {
       title: 'Kirim Den Den Mushi',
@@ -143,11 +145,13 @@ export const dict = {
     contest: {
       title: 'Activity',
       subtitle: 'Avtivity I have taken part in',
+      coming: 'COMMING SOON',
     },
     bounty: {
       title: 'Projects',
       subtitle: 'The work I am proudest of',
       view: 'View Work',
+      coming: 'COMMING SOON',
     },
     contact: {
       title: 'Send a Den Den Mushi',
@@ -248,9 +252,7 @@ export const content = {
       { title: 'Sertifikat Hackathon', file: '/files/hackathon.pdf' },
     ],
     competitions: [
-      { title: 'Juara 1 Hackathon Nasional', image: '/images/contest-1.svg' },
-      { title: 'Finalis Lomba Web Design', image: '/images/contest-2.svg' },
-      { title: 'Peserta Competitive Programming', image: '/images/contest-3.svg' },
+      // { title: 'Juara 1 Hackathon Nasional', image: '/images/contest-1.svg' },
     ],
     projects: [
       {
@@ -330,9 +332,7 @@ export const content = {
       { title: 'Hackathon Certificate', file: '/files/hackathon.pdf' },
     ],
     competitions: [
-      { title: '1st Place — National Hackathon', image: '/images/contest-1.svg' },
-      { title: 'Finalist — Web Design Contest', image: '/images/contest-2.svg' },
-      { title: 'Competitive Programming Entrant', image: '/images/contest-3.svg' },
+      // { title: '1st Place — National Hackathon', image: '/images/contest-1.svg' },
     ],
     projects: [
       {

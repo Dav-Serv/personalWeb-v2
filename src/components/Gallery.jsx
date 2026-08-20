@@ -16,13 +16,13 @@ const H = 900
  * PDF items get a drawn cover instead of a thumbnail, so the page never pulls a
  * whole document down just to fill a card.
  */
-export default function Gallery({ id, title, subtitle, items }) {
+export default function Gallery({ id, title, subtitle, coming, items }) {
   const [open, setOpen] = useState(null)
 
   return (
     <section id={id} className="relative px-4 py-24 sm:px-6 sm:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle title={title} subtitle={subtitle} />
+        <SectionTitle title={title} subtitle={subtitle} coming={coming} />
 
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (

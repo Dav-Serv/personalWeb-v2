@@ -10,10 +10,9 @@ export default function Projects() {
   return (
     <section id="bounty" className="relative px-4 py-24 sm:px-6 sm:py-32">
       <div className="mx-auto max-w-6xl">
-        <SectionTitle title={t.bounty.title} subtitle={t.bounty.subtitle} />
-
+        <SectionTitle title={t.bounty.title} subtitle={t.bounty.subtitle} coming={t.bounty.coming}/>
         <ul className="grid gap-6 md:grid-cols-3">
-          {data.projects.map((p, i) => (
+          {/* {data.projects.map((p, i) => (
             <li
               key={p.title}
               className="reveal group relative"
@@ -67,7 +66,7 @@ export default function Projects() {
                 </div>
               </article>
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
 
